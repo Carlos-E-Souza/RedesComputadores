@@ -1,0 +1,14 @@
+.custom-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.custom-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1em;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
+}

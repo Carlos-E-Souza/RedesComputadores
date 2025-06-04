@@ -1,0 +1,17 @@
+.bg-blue-400 {
+    background-color: #0066ffb4 !important;
+}
+
+.custom-navbar {
+    margin-bottom: 1rem !important;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    color: #0066ffb4 !important;
+}
+
+.custom-navbar .dropdown-item:hover,
+.custom-navbar .dropdown-item:focus {
+    color: #0066ffb4 !important;
+}
