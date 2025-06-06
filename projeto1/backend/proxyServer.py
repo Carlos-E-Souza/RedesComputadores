@@ -1,7 +1,6 @@
-"""fastapi_intermediary.py
-
+"""
 Servidor HTTP intermediário (FastAPI) que se comunica via socket com
-socket_pdf_server.py.
+o servidor.
 
 Dependências:
   pip install fastapi uvicorn python-multipart PyPDF2
@@ -9,7 +8,7 @@ Dependências:
 Endpoints:
   POST /upload      – envia um PDF e devolve uuid
   POST /merge       – envia dois PDFs (file1, file2) e devolve uuid
-  POST /extract     – form‑data: file (PDF) + range="1-5"  ⇒ devolve uuid
+  POST /extract     – form-data: file (PDF) + range="1-5"  ⇒ devolve uuid
   GET  /download/{uuid} – retorna o PDF salvo
 """
 
@@ -22,7 +21,7 @@ import re
 from typing import Generator
 
 SOCKET_HOST = "127.0.0.1"
-SOCKET_PORT = 9000
+SOCKET_PORT = 8000
 BUFFER_SIZE = 1 << 20
 
 app = FastAPI(title="PDF Intermediary Server")

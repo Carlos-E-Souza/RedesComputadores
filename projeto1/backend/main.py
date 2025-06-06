@@ -1,8 +1,4 @@
-"""socket_pdf_server.py
-Servidor de arquivos PDF via sockets TCP.
-
-Comandos (uma requisição por conexão):
-
+"""
 1. UPLOAD\n
    Cliente → "UPLOAD\n" | 8 bytes (uint64 tamanho) | bytes do PDF.
    → Servidor gera UUID, salva em pdf_storage/<uuid>.pdf e devolve "<uuid>\n".
@@ -19,10 +15,8 @@ Comandos (uma requisição por conexão):
 
 4. EXTRACT <start>-<end>\n
    Cliente → "EXTRACT 1-5\n" | 8 bytes | PDF.
-   → Se o PDF possuir páginas ≥ end, extrai intervalo [start,end] (1‑based),
+   → Se o PDF possuir páginas ≥ end, extrai intervalo [start,end],
      salva e devolve UUID; caso contrário, responde "PAGEERR\n".
-
-Dependência extra: PyPDF2  →  pip install PyPDF2
 """
 
 from __future__ import annotations
@@ -41,10 +35,10 @@ try:
 except ImportError as exc:
     raise SystemExit("PyPDF2 não instalado. Execute: pip install PyPDF2") from exc
 
-HOST: str = "127.0.0.1"
-PORT: int = 9000
-STORAGE_DIR: Path = Path("pdf_storage")
-BUFFER_SIZE: int = 1 << 20  # 1 MiB
+HOST = "127.0.0.1"
+PORT = 8000
+STORAGE_DIR = Path("pdf_storage")
+BUFFER_SIZE = 1 << 20  # 1 MiB
 
 STORAGE_DIR.mkdir(exist_ok=True)
 
