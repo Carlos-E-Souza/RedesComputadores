@@ -23,7 +23,7 @@ import "./CardGrid.css";
 // AXIOS INSTANCE (edit baseURL if backend lives elsewhere)
 // ------------------------------------------------------------------
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://192.168.15.96:8000"
+  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8080"
 });
 
 // ------------------------------------------------------------------
@@ -93,6 +93,7 @@ const UploadForm = ({ card, onBack }) => {
       setUuid(data.uuid);
     } catch (e) {
       setErr(e.response?.data?.detail || "Erro no upload");
+      console.error("Upload error:", e);
     } finally { setLoading(false); }
   };
 

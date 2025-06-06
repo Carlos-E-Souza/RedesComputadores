@@ -20,8 +20,8 @@ import struct
 import re
 from typing import Generator
 
-SOCKET_HOST = "127.0.0.1"
-SOCKET_PORT = 8000
+SOCKET_HOST = "0.0.0.0"
+SOCKET_PORT = 9000
 BUFFER_SIZE = 1 << 20
 
 app = FastAPI(title="PDF Intermediary Server")
@@ -151,4 +151,4 @@ async def download(uuid_str: str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("fastapi_intermediary:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("fastapi_intermediary:app", host="0.0.0.0", port=8080, reload=True)

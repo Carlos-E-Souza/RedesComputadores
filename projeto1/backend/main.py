@@ -35,8 +35,8 @@ try:
 except ImportError as exc:
     raise SystemExit("PyPDF2 não instalado. Execute: pip install PyPDF2") from exc
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = 9000
 STORAGE_DIR = Path("pdf_storage")
 BUFFER_SIZE = 1 << 20  # 1 MiB
 
