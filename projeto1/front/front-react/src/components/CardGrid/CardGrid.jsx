@@ -20,10 +20,10 @@ import {
 import "./CardGrid.css";
 
 // ------------------------------------------------------------------
-// AXIOS INSTANCE (edit baseURL if backend lives elsewhere)
+// AXIOS INSTANCE
 // ------------------------------------------------------------------
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8080"
+  baseURL: import.meta.env.VITE_API_URL || "http://192.168.15.96:8080"
 });
 
 // ------------------------------------------------------------------

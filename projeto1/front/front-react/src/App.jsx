@@ -21,7 +21,6 @@ export default function App() {
     <div className="d-flex flex-column min-vh-100">
       <CustomNavBar onNavigate={handleNavigate} />
 
-      {/* cabeçalho some quando um form está aberto */}
       {!formOpen && (
         <Container className="pt-5 text-center">
           <h2 className="fw-bold">Ferramentas online para PDF</h2>

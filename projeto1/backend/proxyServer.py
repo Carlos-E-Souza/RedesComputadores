@@ -151,4 +151,4 @@ async def download(uuid_str: str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("fastapi_intermediary:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("proxyServer:app", host="0.0.0.0", port=8080, reload=True)
